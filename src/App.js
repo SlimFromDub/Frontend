@@ -1,37 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import React from 'react';
-import logo from './images/FA.png';
-import { TextBox } from 'devextreme-react/text-box';
-import Select from 'react-select'
-import Button from 'react-bootstrap/Button';
-import Header from './Header';
-import Footer from './Footer';
+import Home from "./Home";
+import Login from "./Login";
+import Search from "./Search";
+import Detail from "./Detail";
+import Layout from "./Layout";
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-]
 
-function App() {
+export function App() {
   return (
-    <div className="App">
-        <Header></Header>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Název receptu
-        <TextBox/> 
-        Kuchyně
-        <Select isMulti name="colors" options={options} className="basic-multi-select" classNamePrefix="select"/>
-        Ingredience
-        <Select isMulti name="colors" options={options} className="basic-multi-select" classNamePrefix="select"/>
-        Alergeny
-        <Select isMulti name="colors" options={options} className="basic-multi-select" classNamePrefix="select"/>
-        </p>
-        <Button variant="outline-primary">Seach2</Button>{' '}
-        <Footer></Footer>
-    </div>
-    
+    <BrowserRouter>
+      <Routes>
+      <Route exact path="/" element={<Layout  />}>
+      <Route path="/home" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/search" element={<Search />} />
+      <Route path="/detail" element={<Detail />} />
+      </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
