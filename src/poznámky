@@ -149,21 +149,3 @@ function EventListProvider({ children }) {
 }
 
 export default EventListProvider;
-
-
-
-///////////////////////////////////
-Package.js/////////////////////////
-///////////////////////////////////
-export const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
-///////////////////////////////////
-app.js/////////////////////////
-///////////////////////////////////
-import * as options from "./package";
-*options={options.options}
-
-

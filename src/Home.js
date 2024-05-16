@@ -5,14 +5,11 @@ import logo from './images/FA.png';
 import { TextBox } from 'devextreme-react/text-box';
 import Select from 'react-select'
 import Button from 'react-bootstrap/Button';
+import * as searchParamCuisines from "./data/searchParamCuisines";
+import * as searchParamIngredients from './data/searchParamIngredients';
+import * as searchParamAlergens from './data/searchParamAlergens';
 
 import { useNavigate } from "react-router-dom";
-
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-]
 
 function Home() {
     const navigate = useNavigate();
@@ -23,11 +20,11 @@ function Home() {
         Recipe name
         <TextBox style={{alignSelf: "stretch"}}/> 
         Cuisine
-        <Select isMulti name="colors" options={options} className="basic-multi-select" classNamePrefix="select"/>
+        <Select isMulti name="colors" options={searchParamCuisines.cuisines} className="basic-multi-select" classNamePrefix="select"/>
         Ingredient
-        <Select isMulti name="colors" options={options} className="basic-multi-select" classNamePrefix="select"/>
+        <Select isMulti name="colors" options={searchParamIngredients.ingredients} className="basic-multi-select" classNamePrefix="select"/>
         Alergens
-        <Select isMulti name="colors" options={options} className="basic-multi-select" classNamePrefix="select"/>
+        <Select isMulti name="colors" options={searchParamAlergens.alergens} className="basic-multi-select" classNamePrefix="select"/>
         </p>
         <Button onClick={() => navigate("/Search")} variant="outline-primary">Seach</Button>{' '}
     </div>

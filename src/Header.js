@@ -10,6 +10,7 @@ const Header = () =>{
         <div style={{textAlign: 'right' }}>
             Email:{nick}
             <Button onClick={() => navigate("/login")} variant="outline-primary" style={{marginLeft:20}}>LogIn/Register</Button>
+            <Button variant="outline-primary" style={{marginLeft:20, display: "none"}}>LogOff</Button>
         </div>
     )
 }
